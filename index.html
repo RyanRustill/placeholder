@@ -14,9 +14,36 @@
         color: #cbd5e1;
         font-family: 'Fira Code', monospace;
       }
+
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.75s ease-out forwards;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 12ch;
+        }
+      }
+
+      .animate-typing {
+        width: 0;
+        animation: typing 2s steps(15, end) forwards;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #4ade80; /* Tailwind green-400 */
+      }
     </style>
   </head>
-  <body class="flex items-center justify-center h-screen text-center px-4">
+  <body class="flex items-center justify-center h-screen text-center px-4 opacity-0 animate-fade-in">
     <div>
       <div class="flex items-center justify-center space-x-2 text-green-400 mb-4">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -26,7 +53,9 @@
             d="M3 7v13a2 2 0 002 2h14a2 2 0 002-2V7M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"
           />
         </svg>
-        <span class="text-xl font-bold">./coming-soon</span>
+        <span class="text-xl font-bold text-green-400 animate-typing">
+          ./coming-soon
+        </span>
       </div>
       <p class="text-gray-400 max-w-md mx-auto">
         This website is still under development.<br />
@@ -34,3 +63,4 @@
       </p>
     </div>
   </body>
+</html>
